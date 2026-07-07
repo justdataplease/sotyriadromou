@@ -41,7 +41,15 @@
   }
 
   // --- Build the grid --------------------------------------------------
-  ARTWORKS.forEach(function (art) {
+  var shuffled = ARTWORKS.slice();
+  for (var i = shuffled.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = shuffled[i];
+    shuffled[i] = shuffled[j];
+    shuffled[j] = tmp;
+  }
+
+  shuffled.forEach(function (art) {
     var fig = document.createElement("figure");
     fig.dataset.category = art.category || "";
     fig.dataset.tags = (art.tags || []).join("|");

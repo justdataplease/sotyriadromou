@@ -45,9 +45,10 @@ a { color: inherit; }
 .site-title {
   margin: 0;
   font-family: "Kalam", cursive;
-  font-weight: 400;
-  font-size: clamp(1.6rem, 4.5vw, 2.4rem);
-  letter-spacing: 0.02em;
+  font-weight: 700;
+  font-size: clamp(1.3rem, 3.5vw, 1.9rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .site-title a { text-decoration: none; }
@@ -55,8 +56,10 @@ a { color: inherit; }
 .site-subtitle {
   margin: 0.4rem 0 0;
   color: var(--muted);
-  font-family: var(--script);
-  font-size: 1rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .site-nav {
@@ -64,22 +67,24 @@ a { color: inherit; }
   display: flex;
   justify-content: center;
   gap: 1.8rem;
-  font-family: var(--script);
-  font-size: 1rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .site-nav a {
   text-decoration: none;
   color: var(--muted);
   padding-bottom: 3px;
-  border-bottom: 1px solid transparent;
-  transition: color 0.2s, border-color 0.2s;
+  border-bottom: none;
+  transition: color 0.2s;
 }
 
 .site-nav a:hover,
 .site-nav a.active {
   color: var(--ink);
-  border-color: var(--ink);
+  border-bottom: none;
 }
 
 /* ---------- Category filters ---------- */
@@ -104,15 +109,15 @@ a { color: inherit; }
   text-transform: inherit;
   color: var(--muted);
   padding: 0.2rem 0;
-  border-bottom: 1px solid transparent;
-  transition: color 0.2s, border-color 0.2s;
+  border-bottom: none;
+  transition: color 0.2s;
 }
 
 .filters button:hover { color: var(--ink); }
 
 .filters button.active {
   color: var(--ink);
-  border-color: var(--ink);
+  border-bottom: none;
 }
 
 .tag-notice {
@@ -213,10 +218,10 @@ a { color: inherit; }
 .artwork-meta a {
   color: var(--muted);
   text-decoration: none;
-  border-bottom: 1px solid var(--line);
+  border-bottom: none;
 }
 
-.artwork-meta a:hover { color: var(--ink); border-color: var(--ink); }
+.artwork-meta a:hover { color: var(--ink); }
 
 .artwork-tags {
   text-align: center;
@@ -230,7 +235,7 @@ a { color: inherit; }
   margin: 0 0.35rem;
 }
 
-.artwork-tags a:hover { text-decoration: underline; }
+.artwork-tags a:hover { color: var(--ink); }
 
 .artwork-story {
   max-width: 640px;
@@ -320,9 +325,9 @@ a { color: inherit; }
 
 @media (max-width: 640px) {
   .site-header { padding: 1.4rem 1.2rem 1.1rem; }
-  .site-title { font-size: 1.4rem; }
-  .site-subtitle { font-size: 0.85rem; }
-  .site-nav { gap: 1.1rem; font-size: 0.9rem; }
+  .site-title { font-size: 1.2rem; }
+  .site-subtitle { font-size: 0.7rem; }
+  .site-nav { gap: 1.1rem; font-size: 0.7rem; }
   .filters { gap: 0.3rem 1rem; font-size: 0.7rem; padding: 1rem 1rem 1.2rem; }
   .gallery-wrap { padding: 0 1rem; }
   .masonry { columns: 2 140px; column-gap: 6px; }
