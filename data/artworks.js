@@ -170,14 +170,6 @@ const ARTWORKS = [
     `,
   },
   {
-    id: "gymno-me-stavro",
-    title: "Γυμνό με σταυρό",
-    image: "gymno-me-stavro.jpg",
-    category: "Πρόσωπα",
-    tags: ["ελαιογραφία", "γυμνό"],
-    story: "",
-  },
-  {
     id: "nekri-fysi-me-ekmageio",
     title: "Αναζητήσεις",
     image: "nekri-fysi-me-ekmageio.jpg",
