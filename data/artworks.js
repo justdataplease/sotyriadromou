@@ -150,16 +150,6 @@ const ARTWORKS = [
     story: "",
   },
   {
-    id: "gynaika-me-gata",
-    title: "Η Δαπάνη",
-    image: "gynaika-me-gata.jpg",
-    category: "Πρόσωπα",
-    tags: ["ελαιογραφία", "γάτα"],
-    story: `
-      Φέρει τον τίτλο «Η Δαπάνη» και τη χρονολογία 2018.
-    `,
-  },
-  {
     id: "gymno-me-kithara",
     title: "Ματαίωση",
     image: "gymno-me-kithara.jpg",
