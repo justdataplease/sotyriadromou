@@ -1,0 +1,6 @@
+# Original/raw photos — not published; the web-ready copies live in images/erga/
+content/
+
+# OS noise
+Thumbs.db
+.DS_Store

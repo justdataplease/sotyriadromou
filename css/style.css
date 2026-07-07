@@ -1,0 +1,327 @@
+/* ===================================================================
+   Σοφία Δημητροπούλου — sotiriadromou.gr
+   Minimal gallery stylesheet (no frameworks, no build step)
+   =================================================================== */
+
+:root {
+  --paper: #ffffff;
+  --ink: #1c1c1c;
+  --muted: #8a8a8a;
+  --line: #e8e6e2;
+  --accent: #9c5533;
+  --serif: "GFS Didot", "Didot", Georgia, "Times New Roman", serif;
+  --sans: "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; }
+
+/* ---------- Header ---------- */
+
+.site-header {
+  text-align: center;
+  padding: 3.2rem 1rem 1.6rem;
+}
+
+.site-title {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.7rem, 4.5vw, 2.6rem);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.site-title a { text-decoration: none; }
+
+.site-subtitle {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+
+.site-nav {
+  margin-top: 1.7rem;
+  display: flex;
+  justify-content: center;
+  gap: 2.2rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--muted);
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+/* ---------- Category filters ---------- */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 1.6rem;
+  padding: 0.6rem 1rem 2rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.filters button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: var(--muted);
+  padding: 0.2rem 0;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.filters button:hover { color: var(--ink); }
+
+.filters button.active {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.tag-notice {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+  padding-bottom: 1.4rem;
+}
+
+.tag-notice a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ---------- Masonry gallery ---------- */
+
+.gallery-wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.1rem 3rem;
+}
+
+.masonry {
+  columns: 3 300px;
+  column-gap: 1.1rem;
+}
+
+.masonry figure {
+  margin: 0 0 1.1rem;
+  break-inside: avoid;
+  position: relative;
+}
+
+.masonry a {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.masonry img {
+  width: 100%;
+  transition: opacity 0.25s ease, transform 0.4s ease;
+}
+
+.masonry a:hover img {
+  opacity: 0.93;
+  transform: scale(1.015);
+}
+
+.masonry figcaption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 1.6rem 0.9rem 0.7rem;
+  background: linear-gradient(transparent, rgba(20, 18, 16, 0.55));
+  color: #fff;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.masonry a:hover figcaption { opacity: 1; }
+
+/* ---------- Artwork (story) page ---------- */
+
+.artwork-main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 1.2rem 3rem;
+}
+
+.artwork-figure { margin: 0; text-align: center; }
+
+.artwork-figure img {
+  margin: 0 auto;
+  max-height: 78vh;
+  width: auto;
+  max-width: 100%;
+}
+
+.artwork-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.7rem;
+  text-align: center;
+  margin: 1.8rem 0 0.4rem;
+}
+
+.artwork-meta {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.artwork-meta a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+
+.artwork-meta a:hover { color: var(--ink); border-color: var(--ink); }
+
+.artwork-tags {
+  text-align: center;
+  margin-top: 0.7rem;
+  font-size: 0.8rem;
+}
+
+.artwork-tags a {
+  color: var(--accent);
+  text-decoration: none;
+  margin: 0 0.35rem;
+}
+
+.artwork-tags a:hover { text-decoration: underline; }
+
+.artwork-story {
+  max-width: 640px;
+  margin: 2.2rem auto 0;
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+
+.artwork-story p { margin: 0 0 1.2em; }
+
+.artwork-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 640px;
+  margin: 3rem auto 0;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.artwork-nav a {
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.artwork-nav a:hover { color: var(--ink); }
+
+/* ---------- About page ---------- */
+
+.about-main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 1.2rem 3rem;
+}
+
+.about-portrait {
+  margin: 0 0 2.2rem;
+  text-align: center;
+}
+
+.about-portrait img {
+  margin: 0 auto;
+  max-height: 70vh;
+  width: auto;
+  max-width: 100%;
+}
+
+.about-portrait figcaption {
+  margin-top: 0.7rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+}
+
+.about-main h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.4rem;
+  margin: 2.4rem 0 0.8rem;
+  letter-spacing: 0.06em;
+}
+
+.about-main p { margin: 0 0 1.1em; line-height: 1.85; }
+
+.about-main .lead {
+  font-size: 1.08rem;
+  color: #444;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 2.5rem 1rem 2.2rem;
+  border-top: 1px solid var(--line);
+  margin-top: 2rem;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+  .site-header { padding-top: 2.2rem; }
+  .site-title { font-size: 1.25rem; letter-spacing: 0.13em; }
+  .site-subtitle { font-size: 0.72rem; letter-spacing: 0.24em; }
+  .site-nav { gap: 1.2rem; font-size: 0.72rem; }
+  .filters { gap: 0.3rem 1rem; font-size: 0.72rem; }
+  .masonry { columns: 2 140px; column-gap: 0.7rem; }
+  .masonry figure { margin-bottom: 0.7rem; }
+}
