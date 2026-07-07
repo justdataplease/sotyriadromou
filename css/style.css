@@ -142,11 +142,11 @@ a { color: inherit; }
 
 .masonry {
   columns: 4 260px;
-  column-gap: 18px;
+  column-gap: 8px;
 }
 
 .masonry figure {
-  margin: 0 0 18px;
+  margin: 0 0 6px;
   break-inside: avoid;
   position: relative;
 }
@@ -330,6 +330,6 @@ a { color: inherit; }
   .site-nav { gap: 1.1rem; font-size: 0.7rem; }
   .filters { gap: 0.3rem 1rem; font-size: 0.7rem; padding: 1rem 1rem 1.2rem; }
   .gallery-wrap { padding: 0 1rem; }
-  .masonry { columns: 2 140px; column-gap: 12px; }
-  .masonry figure { margin-bottom: 12px; }
+  .masonry { columns: 2 140px; column-gap: 6px; }
+  .masonry figure { margin-bottom: 6px; }
 }
